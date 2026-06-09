@@ -136,7 +136,7 @@ async function fetchSignal(){
 
         const res =
         await fetch(
-            `/api/signal?pair=${pair}&timeframe=${timeframe}`
+        `/api/signal?pair=${encodeURIComponent(pair)}&timeframe=${timeframe}`
         );
 
         const data =
