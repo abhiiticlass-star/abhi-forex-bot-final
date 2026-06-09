@@ -1,0 +1,30 @@
+import os
+
+API_KEY = os.getenv(
+    "TWELVE_DATA_API_KEY"
+)
+
+DAILY_LIMIT = 800
+
+SUPPORTED_PAIRS = [
+    "EUR/USD",
+    "AUD/USD"
+]
+
+SUPPORTED_TIMEFRAMES = [
+    "1min",
+    "5min"
+]
+
+CANDLE_LIMIT = 120
+
+EMA_FAST = 20
+EMA_SLOW = 50
+EMA_LONG = 200
+
+RSI_PERIOD = 14
+
+ATR_PERIOD = 14
+
+CONFIDENCE_MIN = 50
+CONFIDENCE_MAX = 95
