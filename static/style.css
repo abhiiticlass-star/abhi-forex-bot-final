@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    padding:15px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    margin-top:10px;
+}
+
+select{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.countdown{
+    font-size:42px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.signal-box{
+    text-align:center;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.signal-call{
+    color:#22c55e;
+}
+
+.signal-put{
+    color:#ef4444;
+}
+
+.signal-avoid{
+    color:#f59e0b;
+}
+
+.signal-stop{
+    color:#ff0000;
+}
+
+#confidence,
+#trend,
+#score,
+#support,
+#resistance,
+#requests{
+    font-size:24px;
+    text-align:center;
+    font-weight:bold;
+}
+
+#reasons{
+    padding-left:20px;
+}
+
+#reasons li{
+    margin-bottom:6px;
+}
+
+.button-row{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+button{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#startBtn{
+    background:#22c55e;
+    color:white;
+}
+
+#stopBtn{
+    background:#ef4444;
+    color:white;
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+@media(max-width:600px){
+
+    .countdown{
+        font-size:32px;
+    }
+
+    .signal-box{
+        font-size:28px;
+    }
+
+    #confidence,
+    #trend,
+    #score,
+    #support,
+    #resistance,
+    #requests{
+        font-size:20px;
+    }
+
+    button{
+        font-size:16px;
+    }
+}
