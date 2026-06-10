@@ -255,9 +255,20 @@ function startCountdown(){
 
         remaining--;
 
-        if(remaining < 0){
+        if(
+            remaining === 3 &&
+            !signalFetched
+        ){
+            signalFetched = true;
 
             await fetchSignal();
+        }
+
+        if(
+            remaining <= 0
+        ){
+
+            signalFetched = false;
 
             remaining =
             getRemainingSeconds();
