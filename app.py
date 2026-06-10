@@ -102,6 +102,8 @@ def signal():
             )
         )
 
+        log_signal(result)
+
         record_request()
 
         status = get_status()
