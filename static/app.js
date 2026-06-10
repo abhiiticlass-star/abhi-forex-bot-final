@@ -1,5 +1,6 @@
 let timer = null;
 let running = false;
+let signalFetched = false;
 
 const countdownEl =
 document.getElementById("countdown");
