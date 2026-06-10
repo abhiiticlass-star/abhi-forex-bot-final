@@ -24,7 +24,13 @@ def log_signal(
 
         "time": datetime.utcnow().isoformat(),
 
+        "pair": pair,
+        
+        "timeframe": timeframe,
+
         "signal": data.get("signal"),
+
+        "entry_price": entry_price,
 
         "confidence": data.get("confidence"),
 
@@ -34,8 +40,9 @@ def log_signal(
 
         "support": data.get("support"),
 
-        "resistance": data.get("resistance")
-    })
+        "resistance": data.get("resistance"),
 
+        "result": "PENDING"
+    })
     with open(LOG_FILE, "w") as f:
         json.dump(history, f, indent=2)
