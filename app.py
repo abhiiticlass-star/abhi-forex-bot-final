@@ -19,6 +19,8 @@ from request_tracker import (
     get_status
 )
 
+from trade_logger import log_signal
+
 app = Flask(__name__)
 
 
