@@ -102,7 +102,17 @@ def signal():
             )
         )
 
-        log_signal(result)
+        entry_price = float(
+            market_data["current"]
+            .iloc[-1]["close"]
+        )
+
+        log_signal(
+            result,
+            pair,
+            timeframe,
+            entry_price
+        )
 
         record_request()
 
