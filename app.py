@@ -20,6 +20,7 @@ from request_tracker import (
 )
 
 from trade_logger import log_signal
+from result_evaluator import evaluate_signals
 
 app = Flask(__name__)
 
