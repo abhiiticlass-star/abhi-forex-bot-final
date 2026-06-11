@@ -277,7 +277,19 @@ def generate_signal(
 
     # Final Signal
 
-    if score >= 70:
+    mtf_block = False
+
+    if score >= 70 and trend_higher != "Bullish":
+        mtf_block = True
+
+    if score <= -70 and trend_higher != "Bearish":
+        mtf_block = True
+
+    if mtf_block:
+
+        signal = "AVOID"
+
+    elif score >= 70:
 
         signal = "CALL"
 
