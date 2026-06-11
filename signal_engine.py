@@ -234,6 +234,34 @@ def generate_signal(
         sr["reasons"]
     )
 
+    price = latest["close"]
+
+    distance_to_resistance = abs(
+        sr["resistance"] - price
+    )
+
+    distance_to_support = abs(
+        price - sr["support"]
+    )
+
+    if (
+        trend == "Bullish"
+        and distance_to_resistance < latest["atr"] * 0.5
+    ):
+        score -= 30
+        reasons.append(
+            "Near Resistance Rejection"
+        )
+
+    if (
+        trend == "Bearish"
+        and distance_to_support < latest["atr"] * 0.5
+    ):
+        score += 30
+        reasons.append(
+            "Near Support Rejection"
+        )
+
     # Breakout
 
     breakout = (
