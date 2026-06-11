@@ -91,19 +91,45 @@ def get_market_data(
         timeframe
     )
 
+    global cache_5m
+
     if timeframe == "1min":
 
-        higher_df = fetch_candles(
-            pair,
-            "5min"
-        )
+        now = datetime.utcnow()
+
+        use_cache = False
+
+        if (
+            cache_5m["data"] is not None
+            and cache_5m["time"] is not None
+        ):
+
+            age = (
+                now -
+                cache_5m["time"]
+            ).total_seconds()
+
+            if age < 240:
+                use_cache = True
+
+        if use_cache:
+
+            higher_df = cache_5m["data"]
+
+        else:
+
+            higher_df = fetch_candles(
+                    pair,
+                    "5min"
+            )
+
+            cache_5m["data"] = higher_df
+
+            cache_5m["time"] = now
 
     else:
 
-        higher_df = fetch_candles(
-            pair,
-            "5min"
-        )
+        higher_df = current_df
 
     return {
         "current": current_df,
