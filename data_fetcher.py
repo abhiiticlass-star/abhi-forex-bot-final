@@ -11,6 +11,10 @@ BASE_URL = (
     "https://api.twelvedata.com/time_series"
 )
 
+cache_5m = {
+    "data": None,
+    "time": None
+}
 
 def fetch_candles(
     symbol,
