@@ -277,11 +277,11 @@ def generate_signal(
 
     # Final Signal
 
-    if score >= 50:
+    if score >= 70:
 
         signal = "CALL"
 
-    elif score <= -50:
+    elif score <= -70:
 
         signal = "PUT"
 
