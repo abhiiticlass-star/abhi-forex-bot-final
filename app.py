@@ -108,6 +108,10 @@ def signal():
             .iloc[-1]["close"]
         )
 
+        evaluate_signals(
+            entry_price
+        )
+
         log_signal(
             result,
             pair,
