@@ -337,11 +337,11 @@ def generate_signal(
 
         signal = "AVOID"
 
-    elif score >= 70:
+    elif score >= 30:
 
         signal = "CALL"
 
-    elif score <= -70:
+    elif score <= -30:
 
         signal = "PUT"
 
