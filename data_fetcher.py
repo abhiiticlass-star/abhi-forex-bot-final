@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from datetime import datetime
 
 from config import (
     API_KEY,
