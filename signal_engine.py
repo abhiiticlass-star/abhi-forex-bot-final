@@ -265,6 +265,26 @@ def generate_signal(
         mtf["reasons"]
     )
 
+    higher_df = prepare_indicators(higher_df)
+
+    higher_latest = higher_df.iloc[-1]
+
+    trend_higher = "Neutral"
+
+    if (
+        higher_latest["ema20"]
+        > higher_latest["ema50"]
+        > higher_latest["ema200"]
+    ):
+        trend_higher = "Bullish"
+
+    elif (
+        higher_latest["ema20"]
+        < higher_latest["ema50"]
+        < higher_latest["ema200"]
+    ):
+        trend_higher = "Bearish"
+
     # Volatility Filter
 
     if latest["atr"] <= 0:
