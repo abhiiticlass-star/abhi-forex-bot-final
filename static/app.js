@@ -222,6 +222,8 @@ async function fetchSignal(){
             });
         }
 
+        updateStats();
+
     }catch(err){
 
         console.error(err);
