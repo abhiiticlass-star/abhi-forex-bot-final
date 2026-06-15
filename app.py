@@ -6,7 +6,8 @@ from flask import (
 )
 
 from data_fetcher import (
-    get_market_data
+    get_market_data,
+    market_is_open
 )
 
 from signal_engine import (
