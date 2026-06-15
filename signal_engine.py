@@ -327,21 +327,21 @@ def generate_signal(
 
     mtf_block = False
 
-    if score >= 50 and trend_higher != "Bullish":
+    if score >= 30 and trend_higher != "Bullish":
         mtf_block = True
 
-    if score <= -50 and trend_higher != "Bearish":
+    if score <= -30 and trend_higher != "Bearish":
         mtf_block = True
 
     if mtf_block:
 
         signal = "AVOID"
 
-    elif score >= 50:
+    elif score >= 30:
 
         signal = "CALL"
 
-    elif score <= -50:
+    elif score <= -30:
 
         signal = "PUT"
 
