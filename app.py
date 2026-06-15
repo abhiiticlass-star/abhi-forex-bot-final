@@ -191,6 +191,12 @@ def signal():
 
         }), 500
 
+@app.route("/api/stats")
+def stats():
+
+    return jsonify(
+        get_stats()
+    )
 
 if __name__ == "__main__":
 
