@@ -22,6 +22,7 @@ from request_tracker import (
 
 from trade_logger import log_signal
 from result_evaluator import evaluate_signals
+from stats import get_stats
 
 app = Flask(__name__)
 
