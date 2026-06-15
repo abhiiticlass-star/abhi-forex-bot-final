@@ -95,7 +95,33 @@ def signal():
                 pair,
                 timeframe
             )
-        )
+
+        if not market_is_open(
+            market_data["current"],
+            timeframe
+        ):
+
+            return jsonify({
+
+                "signal": "MARKET CLOSED",
+
+                "confidence": 0,
+
+                "trend": "CLOSED",
+
+                "score": 0,
+
+                "support": None,
+
+                "resistance": None,
+
+                "remaining":
+                get_status()["remaining"],
+
+                "reasons": [
+                    "Forex Market Closed"
+                ]
+        })
 
         result = (
             generate_signal(
