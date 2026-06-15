@@ -315,12 +315,18 @@ def generate_signal(
 
     # Volatility Filter
 
-    if latest["atr"] <= 0:
+    recent_atr = (
+        current_df["atr"]
+        .tail(20)
+        .mean()
+    )
 
-        score -= 20
+    if latest["atr"] < recent_atr * 0.70:
+
+        score -= 25
 
         reasons.append(
-            "Low Volatility"
+            "Low Volatility Market"
         )
 
     # Final Signal
