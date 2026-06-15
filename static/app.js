@@ -334,3 +334,5 @@ stopBtn.addEventListener(
 });
 
 loadRequestStatus();
+
+updateStats();
