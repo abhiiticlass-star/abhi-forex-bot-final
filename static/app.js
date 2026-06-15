@@ -232,6 +232,40 @@ async function fetchSignal(){
 }
 
 
+async function updateStats(){
+
+    try{
+
+        const response =
+        await fetch("/api/stats");
+
+        const data =
+        await response.json();
+
+        document.getElementById(
+            "wins"
+        ).innerText =
+        data.wins;
+
+        document.getElementById(
+            "losses"
+        ).innerText =
+        data.losses;
+
+        document.getElementById(
+            "accuracy"
+        ).innerText =
+        data.accuracy + "%";
+
+    }catch(err){
+
+        console.log(err);
+
+    }
+
+}
+
+
 function startCountdown(){
 
     if(running){
