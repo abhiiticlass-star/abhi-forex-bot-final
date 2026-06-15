@@ -212,6 +212,37 @@ def generate_signal(
         psychology["reasons"]
     )
 
+    # Candle Exhaustion Filter
+
+    last6 = current_df.tail(6)
+
+    bullish_count = 0
+    bearish_count = 0
+
+    for _, row in last6.iterrows():
+
+        if row["close"] > row["open"]:
+            bullish_count += 1
+
+        elif row["close"] < row["open"]:
+            bearish_count += 1
+
+    if bullish_count >= 5:
+
+        score -= 20
+
+        reasons.append(
+            "Bullish Exhaustion"
+        )
+
+    if bearish_count >= 5:
+
+        score += 20
+
+        reasons.append(
+            "Bearish Exhaustion"
+        )
+
     # Session Filter
 
     session = get_session_score()
