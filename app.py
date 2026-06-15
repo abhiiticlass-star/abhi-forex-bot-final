@@ -95,6 +95,7 @@ def signal():
                 pair,
                 timeframe
             )
+        )
 
         if not market_is_open(
             market_data["current"],
