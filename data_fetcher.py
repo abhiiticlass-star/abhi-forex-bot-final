@@ -79,6 +79,8 @@ def fetch_candles(
         inplace=True
     )
 
+    df["time"] = pd.to_datetime(df["time"])
+
     return df
 
 
