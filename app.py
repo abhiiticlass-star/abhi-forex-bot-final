@@ -23,6 +23,7 @@ from request_tracker import (
 from trade_logger import log_signal
 from result_evaluator import evaluate_signals
 from stats import get_stats
+import json
 
 app = Flask(__name__)
 
@@ -197,6 +198,18 @@ def stats():
     return jsonify(
         get_stats()
     )
+
+@app.route("/api/history")
+def history():
+
+    with open(
+        "data/signals_history.json",
+        "r"
+    ) as f:
+
+        return jsonify(
+            json.load(f)
+        )
 
 if __name__ == "__main__":
 
