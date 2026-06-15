@@ -138,3 +138,24 @@ def get_market_data(
         "current": current_df,
         "higher": higher_df
     }
+
+def market_is_open(df, timeframe):
+
+    latest_time = df.iloc[-1]["time"]
+
+    now = datetime.now(timezone.utc)
+
+    age = (
+        now -
+        latest_time.to_pydatetime().replace(
+            tzinfo=timezone.utc
+        )
+    ).total_seconds()
+
+    if timeframe == "1min":
+        return age < 180
+
+    if timeframe == "5min":
+        return age < 600
+
+    return True
