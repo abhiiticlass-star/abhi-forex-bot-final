@@ -229,7 +229,7 @@ def generate_signal(
 
     if bullish_count >= 5:
 
-        score -= 20
+        score -= 15
 
         reasons.append(
             "Bullish Exhaustion"
@@ -237,7 +237,7 @@ def generate_signal(
 
     if bearish_count >= 5:
 
-        score += 20
+        score += 15
 
         reasons.append(
             "Bearish Exhaustion"
@@ -279,7 +279,7 @@ def generate_signal(
         trend == "Bullish"
         and distance_to_resistance < latest["atr"] * 0.5
     ):
-        score -= 20
+        score -= 15
         reasons.append(
             "Near Resistance Rejection"
         )
@@ -288,7 +288,7 @@ def generate_signal(
         trend == "Bearish"
         and distance_to_support < latest["atr"] * 0.5
     ):
-        score += 20
+        score += 15
         reasons.append(
             "Near Support Rejection"
         )
