@@ -1,4 +1,8 @@
-from ta.trend import EMAIndicator, MACD
+from ta.trend import (
+    EMAIndicator,
+    MACD,
+    ADXIndicator
+)
 from ta.momentum import RSIIndicator
 from ta.volatility import AverageTrueRange
 
