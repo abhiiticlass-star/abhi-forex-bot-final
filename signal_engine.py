@@ -359,6 +359,16 @@ def generate_signal(
     ):
         trend_higher = "Bearish"
 
+    # ADX Trend Strength Filter
+
+    if adx < 20:
+
+        score -= 30
+
+        reasons.append(
+            "Weak Trend (Low ADX)"
+        )
+
     # Volatility Filter
 
     recent_atr = (
