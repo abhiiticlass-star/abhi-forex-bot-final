@@ -114,6 +114,8 @@ def generate_signal(
 
     latest = current_df.iloc[-1]
 
+    adx = latest["adx"]
+
     score = 0
 
     reasons = []
