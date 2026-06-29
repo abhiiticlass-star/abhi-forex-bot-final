@@ -91,6 +91,15 @@ def prepare_indicators(df):
         atr.average_true_range()
     )
 
+    adx = ADXIndicator(
+        high=df["high"],
+        low=df["low"],
+        close=close,
+        window=14
+    )
+
+    df["adx"] = adx.adx()
+
     return df
 
 
