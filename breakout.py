@@ -1,58 +1,15 @@
-def candle_body_size(candle):
-
-    return abs(
-        candle["close"] -
-        candle["open"]
-    )
-
-def bullish_breakout(
-    df,
-    resistance
-):
+def bullish_breakout(df, resistance):
 
     latest = df.iloc[-1]
 
-    body = abs(
-        latest["close"] -
-        latest["open"]
-    )
-
-    atr = latest.get("atr", 0)
-
-    return (
-
-        latest["close"] > resistance
-
-        and
-
-        body > atr * 0.40
-
-    )
+    return latest["close"] > resistance
 
 
-def bearish_breakout(
-    df,
-    support
-):
+def bearish_breakout(df, support):
 
     latest = df.iloc[-1]
 
-    body = abs(
-        latest["close"] -
-        latest["open"]
-    )
-
-    atr = latest.get("atr", 0)
-
-    return (
-
-        latest["close"] < support
-
-        and
-
-        body > atr * 0.40
-
-    )
+    return latest["close"] < support
 
 
 def fake_bullish_breakout(df, resistance):
